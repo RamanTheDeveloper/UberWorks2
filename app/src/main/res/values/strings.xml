@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">UberWorks2</string>
+    <string name="workerBtn">I\'m a Worker</string>
+    <string name="customerBtn">I\'m a customer</string>
+    <string name="DriverLogin">Driver Login</string>
+    <string name="WorkerLogin">Worker Login</string>
+    <string name="CustomerLogin">Customer Login</string>
+    <string name="hintEmail">Email</string>
+    <string name="HintPassword">Password</string>
+    <string name="LogiinBtn">Login</string>
+    <string name="NoAccount">Don\'t have an Account</string>
+    <string name="RegisterBtn">Register</string>
+    <string name="title_activity_workers_maps">Map</string>
+    <string name="title_activity_customers_maps">Map</string>
+    <string name="SearchForWorkers">Search For Workers</string>
+    <string name="LookForRequests">Look For My Requests</string>
+</resources>

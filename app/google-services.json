@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "220916937347",
+    "firebase_url": "https://uberworks2.firebaseio.com",
+    "project_id": "uberworks2",
+    "storage_bucket": "uberworks2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220916937347:android:c490f7a124a7e274a861b6",
+        "android_client_info": {
+          "package_name": "be.singh.ramandeep.uberworks2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220916937347-ue37390il66btjkq2n45c0rq4fj49ssq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "be.singh.ramandeep.uberworks2",
+            "certificate_hash": "4e5f3f0ed8d722a611625a731e823f2a311f776b"
+          }
+        },
+        {
+          "client_id": "220916937347-7jik09c8uuasfis43a3h1e0e0ksdpff2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvqz09vb2507dfjStTBHx3OXCHaLr4Vaw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220916937347-7jik09c8uuasfis43a3h1e0e0ksdpff2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
