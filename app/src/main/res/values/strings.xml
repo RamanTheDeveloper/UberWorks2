@@ -14,4 +14,8 @@
     <string name="title_activity_customers_maps">Map</string>
     <string name="SearchForWorkers">Search For Workers</string>
     <string name="LookForRequests">Look For My Requests</string>
+    <string name="Logout">logout</string>
+    <string name="settings">Settings</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

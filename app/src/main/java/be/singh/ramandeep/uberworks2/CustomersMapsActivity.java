@@ -1,5 +1,7 @@
 package be.singh.ramandeep.uberworks2;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
@@ -22,12 +24,9 @@ import java.util.Objects;
 
 public class CustomersMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
-
     //Making buttons for settings and logout
     private Button CustomerLogoutBtn, CustomerSettingsBtn, SearchForWorkersBtn;
     private FirebaseAuth mAuth;
-    private FirebaseUser currentUser;
     private Boolean currentLogoutCustomerStatus = false;
 
     @Override
@@ -36,12 +35,12 @@ public class CustomersMapsActivity extends FragmentActivity implements OnMapRead
         setContentView(R.layout.activity_customers_maps);
 
         mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         //Initialize the buttons
-        CustomerLogoutBtn = findViewById(R.id.customer_logout_btn);
-        CustomerSettingsBtn = findViewById(R.id.customer_settings_btn);
-        SearchForWorkersBtn = findViewById(R.id.search_customer_btn);
+        //CustomerLogoutBtn = findViewById(R.id.customer_logout_btn);
+        //CustomerSettingsBtn = findViewById(R.id.customer_settings_btn);
+        //SearchForWorkersBtn = findViewById(R.id.search_customer_btn);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -61,14 +60,14 @@ public class CustomersMapsActivity extends FragmentActivity implements OnMapRead
             }
         });
 
-        //Calling onClickListener for search for workers button
+        /*//Calling onClickListener for search for workers button
         SearchForWorkersBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SearchForWorkersBtn.setText("Searching For Available Workers");
                 GetClosestWorker();
             }
-        });
+        });*/
     }
 
     private void GetClosestWorker() {
@@ -77,12 +76,11 @@ public class CustomersMapsActivity extends FragmentActivity implements OnMapRead
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
         // Add a marker in Belgium and move the camera
         LatLng belgium = new LatLng(50, 4);
-        mMap.addMarker(new MarkerOptions().position(belgium).title("Marker in Belgium"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(belgium));
+        googleMap.addMarker(new MarkerOptions().position(belgium).title("Marker in Belgium"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(belgium));
     }
 
     @Override
