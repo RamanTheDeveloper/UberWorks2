@@ -64,7 +64,7 @@ public class CustomerLoginRegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 CustomerLoginBtn.setVisibility(View.INVISIBLE);
                 CustomerRegisterLink.setVisibility(View.INVISIBLE);
-                CustomerStatusLink.setText("Register Customer");
+                CustomerStatusLink.setText(R.string.registerCustomer);
 
                 CustomerRegisterBtn.setVisibility(View.VISIBLE);
                 CustomerRegisterBtn.setEnabled(true);

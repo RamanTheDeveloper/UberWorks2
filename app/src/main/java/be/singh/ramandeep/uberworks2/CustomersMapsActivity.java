@@ -25,7 +25,7 @@ import java.util.Objects;
 public class CustomersMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     //Making buttons for settings and logout
-    private Button CustomerLogoutBtn, CustomerSettingsBtn, SearchForWorkersBtn;
+    //private Button CustomerLogoutBtn, CustomerSettingsBtn, SearchForWorkersBtn;
     private FirebaseAuth mAuth;
     private Boolean currentLogoutCustomerStatus = false;
 
@@ -49,7 +49,7 @@ public class CustomersMapsActivity extends FragmentActivity implements OnMapRead
         mapFragment.getMapAsync(this);
 
         //Create onclicklistener for logout
-        CustomerLogoutBtn.setOnClickListener(new View.OnClickListener() {
+        /*CustomerLogoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 currentLogoutCustomerStatus = true;
@@ -58,7 +58,7 @@ public class CustomersMapsActivity extends FragmentActivity implements OnMapRead
                 mAuth.signOut();
                 LogoutCustomer();
             }
-        });
+        });*/
 
         /*//Calling onClickListener for search for workers button
         SearchForWorkersBtn.setOnClickListener(new View.OnClickListener() {
@@ -70,10 +70,6 @@ public class CustomersMapsActivity extends FragmentActivity implements OnMapRead
         });*/
     }
 
-    private void GetClosestWorker() {
-
-    }
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
@@ -83,26 +79,26 @@ public class CustomersMapsActivity extends FragmentActivity implements OnMapRead
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(belgium));
     }
 
-    @Override
-    protected void onStop() {
+    /*@Override
+    *//*protected void onStop() {
         super.onStop();
 
         //Disconnecting user from the app
         if(!currentLogoutCustomerStatus){
             DisconnectCustomer();
         }
-    }
+    }*/
 
-    private void DisconnectCustomer() {
+    /*private void DisconnectCustomer() {
         String userId = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
 
         DatabaseReference WorkerAvailabilityRef = FirebaseDatabase.getInstance().getReference();
-    }
+    }*/
 
-    private void LogoutCustomer() {
+    /*private void LogoutCustomer() {
         Intent welcomeIntent = new Intent(CustomersMapsActivity.this, WelcomeActivity.class);
         welcomeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(welcomeIntent);
         finish();
-    }
+    }*/
 }
