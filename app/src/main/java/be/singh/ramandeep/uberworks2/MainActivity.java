@@ -1,5 +1,10 @@
 package be.singh.ramandeep.uberworks2;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,11 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -24,7 +24,6 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     private ActionBarDrawerToggle mToggle;
-    private RecyclerView recyclerView;
     private RecyclerAdapter recyclerAdapter;
 
     List<String> usersList;
@@ -52,9 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
         thread.start();
 
+        //Setup toolbar and bind it to to layout file navigation_actionbar
         Toolbar mToolbar = findViewById(R.id.nav_actionbar);
         setSupportActionBar(mToolbar);
 
+        //Adding the toggle hamburger menu as well as binding to layout file activity_customers_maps
         DrawerLayout mDrawerLayout = findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
 
-
+        //List of users in a recycle view when searching
         usersList = new ArrayList<>();
         usersList.add("Alpha");
         usersList.add("Beta");
@@ -83,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
         usersList.add("Opera");
         usersList.add("Paul");
 
-        recyclerView = findViewById(R.id.recyclerView);
+        //Binding recycle view
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerAdapter = new RecyclerAdapter(usersList);
         recyclerView.setAdapter(recyclerAdapter);
 
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(dividerItemDecoration);
 
 
+        //Adding bottom navigation to activity_customers_maps layout file
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
@@ -143,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if(mToggle.onOptionsItemSelected(item)){

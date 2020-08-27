@@ -1,11 +1,14 @@
 package be.singh.ramandeep.uberworks2;
-
-import androidx.appcompat.app.AppCompatActivity;
+/**
+ * This class is the Welcome class and will display Uber logo for 5 seconds and then move on to next activity
+ */
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
 
